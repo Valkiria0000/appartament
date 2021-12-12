@@ -11,7 +11,7 @@ $blue: #3596f5;
 
 @font-face {
   font-family: "Bebas Neue";
-  src: url(../font/BebasNeue.ttf);
+  src: url(../font/Bebas-Neue.ttf);
   font-weight: 400;
   font-style: normal;
 }
@@ -53,6 +53,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
+  color: $grey;
 }
 
 /**
@@ -391,7 +392,6 @@ template {
 .navbar {
   max-width: 1280px;
   margin: 0 auto;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -431,4 +431,71 @@ template {
       text-decoration: none;
     }
   }
+}
+
+.main {
+  padding-top: 54px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  &-image-home path {
+    opacity: 0;
+    cursor: pointer;
+  }
+  &-image-home path:hover {
+    opacity: 1;
+  }
+  &-info {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 37px;
+      line-height: 44px;
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+}
+path.current-floor {
+  opacity: 1;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-button {
+    background-color: $white;
+    border: none;
+    cursor: pointer;
+    &-down {
+      transform: rotateX(180deg);
+    }
+  }
+  &-floar {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 130px;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+.button {
+  background-color: $blue;
+  border-radius: 6px;
+  border: none;
+  padding: 16px 36px;
+  color: $white;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  width: 297px;
+  cursor: pointer;
 }

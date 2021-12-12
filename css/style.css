@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: "Bebas Neue";
-  src: url(../font/BebasNeue.ttf);
+  src: url(../font/Bebas-Neue.ttf);
   font-weight: 400;
   font-style: normal;
 }
@@ -45,6 +45,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
+  color: #635854;
 }
 
 /**
@@ -421,6 +422,94 @@ template {
   line-height: 20px;
   color: #ffffff;
   text-decoration: none;
+}
+
+.main {
+  padding-top: 54px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main-image-home path {
+  opacity: 0;
+  cursor: pointer;
+}
+.main-image-home path:hover {
+  opacity: 1;
+}
+.main-info {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main-info-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 37px;
+  line-height: 44px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+}
+
+path.current-floor {
+  opacity: 1;
+}
+
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.counter-button {
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.counter-button-down {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+.counter-floar {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 130px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.button {
+  background-color: #3596f5;
+  border-radius: 6px;
+  border: none;
+  padding: 16px 36px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  width: 297px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
