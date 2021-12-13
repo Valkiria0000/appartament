@@ -3,20 +3,25 @@ $(document).ready(function () {
    let counterUp = $('.counter-up');/*кнопка увеличения этажа*/
    let counterDown = $('.counter-down');/*кнопка уменьшения этажа*/
    let floorPath = $('.main-image-home path');
-
+   let modal = $('.modal');
+   let modalCloseButton = $('.modal-dialog-button');
+   let buttonPrimery = $('.button-primery');
    //функция при наведении мыши на этаж
    floorPath.on('mouseover', function () {
       floorPath.removeClass('current-floor');/*удаляем активный класс у этажей*/
       currentFloor = $(this).attr('data-floor');/*получаем значение текущего этажа*/
-      $('.counter-floar').text(currentFloor);/*записываем значение этажа в счетчик справа*/
+      $('.floor').text(currentFloor);/*записываем значение этажа в счетчик справа*/
    });
+   floorPath.on('click', toggleModal);/*при клике на этаж - вызвать окно*/
+   modalCloseButton.on('click', toggleModal);/*при клике на кнопку - закрывать окно*/
+   buttonPrimery.on('click', toggleModal);
 /*отслеживаем клик по кнопке вверх*/
    counterUp.on('click', function () {
       /*проверяем значение этажа, оно не должно быть больше 18*/
      if (currentFloor < 18) { 
         currentFloor++;/*прибавляем один этаж*/
       usCurrentFloor = currentFloor.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping: false});/*форматируем переменную с этажом, чтобы было 01 а не 1*/
-      $('.counter-floar').text(usCurrentFloor);/*записываем значение этажа в счетчик справа*/
+      $('.floor').text(usCurrentFloor);/*записываем значение этажа в счетчик справа*/
       floorPath.removeClass('current-floor');/*удаляем активный класс у этажей*/
       $(`[data-floor=${usCurrentFloor}]`).toggleClass('current-floor');/*подсвечиваем текущий этаж*/
    }
@@ -31,4 +36,7 @@ $(document).ready(function () {
        $(`[data-floor=${usCurrentFloor}]`).toggleClass('current-floor');
      
     } })
+    function toggleModal() { /*функция открыть и закрыть окно*/
+      modal.toggleClass('is-open');
+   }
    });

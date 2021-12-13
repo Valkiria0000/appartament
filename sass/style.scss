@@ -1,6 +1,7 @@
 $grey: #635854;
 $white: #ffffff;
 $blue: #3596f5;
+$lightgrey: #ebebeb;
 
 @font-face {
   font-family: "Roboto";
@@ -54,6 +55,8 @@ body {
   font-style: normal;
   font-weight: normal;
   color: $grey;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 /**
@@ -407,8 +410,6 @@ template {
       &-link {
         text-decoration: none;
         color: $white;
-        font-size: 16px;
-        line-height: 19px;
       }
     }
   }
@@ -485,6 +486,7 @@ path.current-floor {
     font-size: 130px;
     font-style: normal;
     font-weight: normal;
+    margin: 60px;
   }
 }
 .button {
@@ -493,9 +495,89 @@ path.current-floor {
   border: none;
   padding: 16px 36px;
   color: $white;
-  font-size: 16px;
-  line-height: 19px;
   text-align: center;
   width: 297px;
   cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /*фиксирование позиции поверх сайта*/
+  left: 0; /*приклеиваем к левому краю*/
+  top: 0; /*приклеиваем к верхнему краю*/
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.2s;
+  background-color: rgba(0, 0, 0, 0.8); /*прозрачный черный фон*/
+  &-dialog {
+    max-width: 1000px;
+    min-height: 565px;
+    background-color: $white;
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+
+    &-button {
+      position: absolute;
+      right: 27px;
+      top: 38px;
+      border: none;
+      cursor: pointer;
+      background-color: $white;
+    }
+    &-image {
+      background-color: $lightgrey;
+      width: 60%;
+      text-align: center;
+      padding: 50px;
+      &-flats path {
+        opacity: 0;
+        cursor: pointer;
+      }
+      &-flats path:hover {
+        opacity: 1;
+      }
+    }
+    &-info {
+      padding: 50px 46px;
+      width: 40%;
+      &-flat {
+        margin-top: 55px;
+        padding: 0;
+        &-item {
+          list-style-type: none;
+          margin-bottom: 10px;
+          &-link {
+            color: $grey;
+            text-decoration: none;
+          }
+          &-link:hover {
+            color: $blue;
+            text-decoration: underline;
+          }
+        }
+      }
+      &-text {
+        font-style: italic;
+        margin-top: 56px;
+      }
+    }
+  }
+}
+.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-title {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
 }
