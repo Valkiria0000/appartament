@@ -519,8 +519,11 @@ path.current-floor {
     background-color: $white;
     flex-grow: 1;
     display: flex;
+    opacity: 0;
     position: relative;
-
+    transform: translateY(-10%);
+    transition: transform 0.2s, opacity 0.2s;
+    transition-delay: 0.2s;
     &-button {
       position: absolute;
       right: 27px;
@@ -571,6 +574,10 @@ path.current-floor {
 .is-open {
   opacity: 1;
   transform: scale(1);
+}
+.is-open > .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .modal-title {

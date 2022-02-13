@@ -6,16 +6,18 @@ $(document).ready(function () {
    let modal = $('.modal');
    let modalCloseButton = $('.modal-dialog-button');
    let buttonPrimery = $('.button-primery');
+  
    //функция при наведении мыши на этаж
    floorPath.on('mouseover', function () {
       floorPath.removeClass('current-floor');/*удаляем активный класс у этажей*/
       currentFloor = $(this).attr('data-floor');/*получаем значение текущего этажа*/
       $('.floor').text(currentFloor);/*записываем значение этажа в счетчик справа*/
    });
+
    floorPath.on('click', toggleModal);/*при клике на этаж - вызвать окно*/
    modalCloseButton.on('click', toggleModal);/*при клике на кнопку - закрывать окно*/
    buttonPrimery.on('click', toggleModal);
-/*отслеживаем клик по кнопке вверх*/
+      /*отслеживаем клик по кнопке вверх*/
    counterUp.on('click', function () {
       /*проверяем значение этажа, оно не должно быть больше 18*/
      if (currentFloor < 18) { 
@@ -35,8 +37,13 @@ $(document).ready(function () {
        floorPath.removeClass('current-floor');
        $(`[data-floor=${usCurrentFloor}]`).toggleClass('current-floor');
      
-    } })
+    } });
+
     function toggleModal() { /*функция открыть и закрыть окно*/
       modal.toggleClass('is-open');
    }
-   });
+   
+ });
+
+   
+  
