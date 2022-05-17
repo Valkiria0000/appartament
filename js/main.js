@@ -7,6 +7,7 @@ $(document).ready(function () {
    let modalCloseButton = $('.modal-dialog-button');
    let buttonPrimery = $('.button-primery');
   
+  
    //функция при наведении мыши на этаж
    floorPath.on('mouseover', function () {
       floorPath.removeClass('current-floor');/*удаляем активный класс у этажей*/
@@ -42,8 +43,10 @@ $(document).ready(function () {
     function toggleModal() { /*функция открыть и закрыть окно*/
       modal.toggleClass('is-open');
    }
-   
- });
-
-   
   
+}); 
+   
+
+
+
+ 

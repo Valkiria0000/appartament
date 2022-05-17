@@ -407,10 +407,21 @@ template {
     text-align: center;
     &-item {
       margin: 0 40px;
+      border-right: 3px solid transparent;
+      padding-right: 15px;
       &-link {
         text-decoration: none;
         color: $white;
       }
+      &-link:hover {
+        color: $blue;
+        transition: all 0.5s ease;
+        text-shadow: 2px 3px 4px rgba(192, 186, 186, 0.8);
+      }
+    }
+    &-item:hover {
+      transition: all 0.5s ease;
+      border-right: 3px solid $blue;
     }
   }
 
@@ -464,9 +475,6 @@ template {
     }
   }
 }
-path.current-floor {
-  opacity: 1;
-}
 
 .counter {
   display: flex;
@@ -497,9 +505,35 @@ path.current-floor {
   color: $white;
   text-align: center;
   width: 297px;
+
   cursor: pointer;
 }
+.button:hover {
+  background-color: $grey;
+  box-shadow: 2px 5px 5px rgba(192, 186, 186, 0.8);
+  color: $white;
+}
 
+.button:active {
+  background-color: $blue;
+  box-shadow: -2px -5px 5px rgba(192, 186, 186, 0.8);
+
+  color: $white;
+}
+
+.footer {
+  background-color: $grey;
+  box-shadow: -1px -11px 12px rgba(0, 0, 0, 0.2);
+
+  &-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+    margin-top: 54px;
+    color: $lightgrey;
+  }
+}
 .modal {
   display: flex;
   justify-content: center;
@@ -587,4 +621,11 @@ path.current-floor {
   font-size: 24px;
   line-height: 29px;
   color: #000000;
+}
+path.current-floor {
+  opacity: 1;
+}
+
+.active {
+  color: $blue;
 }

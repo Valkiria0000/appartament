@@ -402,10 +402,23 @@ template {
 }
 .navbar-menu-item {
   margin: 0 40px;
+  border-right: 3px solid transparent;
+  padding-right: 15px;
 }
 .navbar-menu-item-link {
   text-decoration: none;
   color: #ffffff;
+}
+.navbar-menu-item-link:hover {
+  color: #3596f5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  text-shadow: 2px 3px 4px rgba(192, 186, 186, 0.8);
+}
+.navbar-menu-item:hover {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  border-right: 3px solid #3596f5;
 }
 .navbar-contacts {
   text-align: right;
@@ -468,10 +481,6 @@ template {
   margin: 0;
 }
 
-path.current-floor {
-  opacity: 1;
-}
-
 .counter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -510,6 +519,34 @@ path.current-floor {
   text-align: center;
   width: 297px;
   cursor: pointer;
+}
+
+.button:hover {
+  background-color: #635854;
+  -webkit-box-shadow: 2px 5px 5px rgba(192, 186, 186, 0.8);
+          box-shadow: 2px 5px 5px rgba(192, 186, 186, 0.8);
+  color: #ffffff;
+}
+
+.button:active {
+  background-color: #3596f5;
+  -webkit-box-shadow: -2px -5px 5px rgba(192, 186, 186, 0.8);
+          box-shadow: -2px -5px 5px rgba(192, 186, 186, 0.8);
+  color: #ffffff;
+}
+
+.footer {
+  background-color: #635854;
+  -webkit-box-shadow: -1px -11px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: -1px -11px 12px rgba(0, 0, 0, 0.2);
+}
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px;
+  margin-top: 54px;
+  color: #ebebeb;
 }
 
 .modal {
@@ -624,6 +661,14 @@ path.current-floor {
   font-size: 24px;
   line-height: 29px;
   color: #000000;
+}
+
+path.current-floor {
+  opacity: 1;
+}
+
+.active {
+  color: #3596f5;
 }
 
 /*# sourceMappingURL=style.css.map */
